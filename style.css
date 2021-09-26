@@ -15,18 +15,253 @@ html {
 
 *,
 *:before,
-*:after, h1, h2, h3, h4, h5, h4 , h5, h6 {
+*:after, h1, h2, h3, h4, h5, h4 , h5, h6, fieldset {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 body {
   /* max-width: 1440px; */
   margin: 0 auto;
-  color: var(--primary01);
+  color: #ffffff;
+  background-color: var(--primary01);
   font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: -0.1px;
+}
+
+body::after {
+  content: "";
+  background: url(images/bg-intro-mobile.png);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 0 6.5%;
+  max-width: 70rem;
+}
+
+/*CONTAINER INFO*/
+
+h1 {
+  font-weight: 700;
+  font-size: 2.7rem;
+  margin-top: 9.5rem;
+}
+
+.description {
+  font-weight: 400;
+  line-height: 2.6rem;
+  padding: 0 0.2rem;
+
+  margin-top: 2.5rem;
+  margin-bottom: 6.5rem;
+}
+
+/*CONTAINER OFFER*/
+
+.offer__price {
+  background-color: var(--accent);
+  border-radius: 1rem;
+  box-shadow: 0px 5px 0px 0px rgba(104, 99, 99, 0.3);
+  padding: 2.4rem 7.5rem;
+  line-height: 2.4rem;
+}
+
+.offer__form {
+  background-color: #ffffff;
+  padding: 0.8rem 2.4rem;
+  border-radius: 1rem;
+  margin-top: 2.4rem;
+  box-shadow: 0px 5px 0px 0px rgba(104, 99, 99, 0.3);
+}
+
+fieldset {
+  border: none;
+  position: relative;
+}
+
+form input {
+  position: relative;
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 2rem 3rem;
+  border: 1px solid var(--neutral02);
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* PARA ERROR EMAIL cambiar color texto 
+form input::placeholder {
+  color: var(--primary01);
+} */
+
+form input:focus {
+  outline: 1px solid var(--primary01);
+}
+
+form input:focus::placeholder {
+  opacity: 0;
+}
+
+.error-icon {
+  position: absolute;
+  top: 3.2rem;
+  right: 2.5rem;
+  display: none;  
+}
+
+#submit {
+  border: none;
+  background-color: var(--primary02);
+  box-shadow: 0px -4px 0px 0px rgba(104, 99, 99, 0.2) inset;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+#submit:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.form p {
+  color: var(--neutral02);
+  padding: 0 2rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.form p span {
+  color: var(--primary01);
+}
+
+.error-message p {
+  font-size: 1.2rem;
+  color: var(--primary01);
+  padding: 0.8rem 0;
+  text-align: right;
+  font-style: italic;
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 2rem 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 416px) {
+  h1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 4% 6%;
+  max-width: 144rem;
+  }
+
+  /*CONTAINER INFO*/
+  .container__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: left;
+    padding-right: 3rem;
+  }
+
+  h1 {
+      font-size: 4.5rem;
+      line-height: 4.9rem;
+      max-width: 42rem;
+    }
+  
+  .description {
+    max-width: 40rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+    padding: 0 0.2rem;
+
+    margin-top: 2.5rem;
+    margin-bottom: 6.5rem;
+  }
+
+  /*CONTAINER OFFER*/
+  .container__offer {
+    max-width: 37rem;
+  }
+
+  .offer__form {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .container {
+    justify-content: space-around;
+    padding: 4% 7%;
+  }
+
+  .container__info {
+    padding-right: 3rem;
+  }
+
+  /*CONTAINER OFFER*/
+  .container__offer {
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: 1356px) {
+  .container {
+    padding: 4% 11.5%;
+  }
+
+  /*CONTAINER INFO*/
+  .container__info {
+    padding-right: 7.3rem;
+  }
+
+  h1 {
+      font-size: 5rem;
+      line-height: 5.6rem;
+    }
+  
+  .description {
+    max-width: 49.2rem;
+  }
+
+  /*CONTAINER OFFER*/
+  .container__offer {
+    max-width: 54rem;
+  }
+  
 }
