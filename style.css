@@ -86,7 +86,7 @@ h1 {
 
 .offer__form {
   background-color: #ffffff;
-  padding: 0.8rem 2.4rem;
+  padding: 2.4rem;
   border-radius: 1rem;
   margin-top: 2.4rem;
   box-shadow: 0px 5px 0px 0px rgba(104, 99, 99, 0.3);
@@ -120,6 +120,10 @@ form input:focus {
 form input:focus::placeholder {
   opacity: 0;
 }
+
+#first {
+    margin-top: 0;
+  }
 
 .error-icon {
   position: absolute;
@@ -179,12 +183,23 @@ form input:focus::placeholder {
 }
 
 @media (min-width: 900px) {
+
+  body::after {
+    content: "";
+    background: url(images/bg-intro-desktop.png);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
   .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  padding: 4% 6%;
+  padding: 8.1% 6%;
   max-width: 144rem;
   }
 
@@ -220,14 +235,14 @@ form input:focus::placeholder {
   }
 
   .offer__form {
-    padding-bottom: 4rem;
+    padding: 4rem;
   }
 }
 
 @media (min-width: 1080px) {
   .container {
     justify-content: space-around;
-    padding: 4% 7%;
+    
   }
 
   .container__info {
@@ -242,7 +257,7 @@ form input:focus::placeholder {
 
 @media (min-width: 1356px) {
   .container {
-    padding: 4% 11.5%;
+    padding: 8.1% 11.5% 6%;
   }
 
   /*CONTAINER INFO*/
@@ -261,6 +276,7 @@ form input:focus::placeholder {
 
   /*CONTAINER OFFER*/
   .container__offer {
+    width: 100%;
     max-width: 54rem;
   }
   
